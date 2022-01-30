@@ -1,22 +1,22 @@
 Hello,
 
-Thank you for providing with data. Based on a premilimary analysis of the data, I wanted to share a few concerns about the data quality. 
-1. Non-atomic data: Several fields in the data have non-atomic data i.e. multiple attributes in a single column which does not comply with the relational database
-structure and hence makes querying and analysing the data highly challenging. For eg. List of items bought under a particular receipt number is also present in a 
-single column and analyzing sales based on items becomes very challenging. Also, cpg column brands data has both the cpg_id as well as cpg_ref.
-2. Missing Data: There are multiple occurrences of missing data in the table. 
+Thank you for providing with data. Based on premilimary analysis of the data, I wanted to share a few concerns about the data quality. 
+1. Non-atomic data: Several fields in the data are non-atomic i.e. multiple attributes in a single column which does not comply with the relational database
+structure and hence makes querying and analysing data highly challenging. For eg. List of items bought under a particular receipt number is present in a single 
+column which makes analyzing sales based on items becomes very challenging.
+2. Missing Data: There are multiple occurrences of missing data in the table which results in ambiguity. 
 3. Data inconsistency: There are several occurences of data inconsistency, for eg. list of items under a certain receipt may have values for different attributes. 
 If there is a possibility of reducing the number of columns by making attrbutes consistent across items, it could help in gathering better insights from the data.
 4. Duplicate values: There a several cases of duplicate values especially in the users dataset. Users data has information about 495 users but the ID column of
 users has only 212 unique values.
 
 In order to create a consistent and reliable database, the above concerns that have come up from a preliminary analysis will need to be taken care of. A set of data
-acquisition and storage guidelines can be put in place that will ensure consistency across datasets. To start off this process, a relational database system can be 
-implemented which would help in creating atomic data with consitency. As the first step, an ERD will have to be created that can ensure in exhaustive and efficient
-data collection and storage with minimal redundancy. ERD can worked out by collaborating with other functions as it will help in creating a robust database system.
-A relational databse may ensure smoother and consistent flow of data that could help in productionizing analytical models that may improve business and operational 
-efficiency. 
-Feel free to reach out in case of any concerns and we can setup a meeting to discuss the way forward.
+acquisition and storage guidelines can be put in place that will improve data management practices across the organization. To start off this process, a relational 
+database system can be implemented which would help in creating atomic data with consitency. As the first step, an ERD will have to be created which will essentially
+capture the overall architecture of the database that may ensure exhaustive and efficient data collection and storage with minimal redundancy. ERD can be worked out 
+by collaborating with other functions as it will help in creating a robust database system. A relational database may ensure smoother and consistent flow of data 
+that could help in productionizing analytical models that may improve business and operational efficiency. 
+We can setup a meeting to discuss the way forward and feel free to reach out in case of any concerns.
 
 Thanks and regards,
 
