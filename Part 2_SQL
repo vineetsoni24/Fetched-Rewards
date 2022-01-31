@@ -1,22 +1,24 @@
 •	What are the top 5 brands by receipts scanned for most recent month?
-select brandCode, count(distinct id) as total_receipts_scanned from receipt_item where id in (select id from receipts where dateScanned>(select max(dateScanned)- interval 1 month from receipts)) 
+
+select brandCode, count(distinct id) as total_receipts_scanned from receipt_item where id in 
+(select id from receipts where dateScanned>(select max(dateScanned)- interval 1 month from receipts)) 
 and brandCode != '' group by brandCode order by total_receipts_scanned desc limit 5;
 
 •	How does the ranking of the top 5 brands by receipts scanned for the recent month compare to the ranking for the previous month?
-select brandCode, count(distinct id) as total_receipts_scanned from receipt_item where id in (select id from receipts where dateScanned between (select max(dateScanned)- interval 2 month from receipts) and (select max(dateScanned)- interval 1 month from receipts)) and brandCode != '' group by brandCode order by total_receipts_scanned desc limit 5;
+
+select brandCode, count(distinct id) as total_receipts_scanned from receipt_item where id in (select id from receipts where dateScanned between 
+(select max(dateScanned)- interval 2 month from receipts) and (select max(dateScanned)- interval 1 month from receipts)) and brandCode != '' group by brandCode 
+order by total_receipts_scanned desc limit 5;
 
 •	When considering average spend from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
-select rewardsReceiptStatus, avg(totalSpent) as Average_Amount_Spent, sum(purchasedItemCount) as Total_Items_Purchased from receipts where rewardsReceiptStatus in ('FINISHED', 'REJECTED') group by rewardsReceiptStatus
-
 •	When considering total number of items purchased from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
-select rewardsReceiptStatus, avg(totalSpent) as Average_Amount_Spent, sum(purchasedItemCount) as Total_Items_Purchased from receipts where rewardsReceiptStatus in ('FINISHED', 'REJECTED') group by rewardsReceiptStatus
+
+select rewardsReceiptStatus, avg(totalSpent) as Average_Amount_Spent, sum(purchasedItemCount) as Total_Items_Purchased from receipts where rewardsReceiptStatus in 
+('FINISHED', 'REJECTED') group by rewardsReceiptStatus
+
 
 •	Which brand has the most spend among users who were created within the past 6 months?
-select brandCode, sum(finalPrice) as total_spend, count(distinct id) as total_transactions from receipt_item where id in (select id from receipts where userid in 
-(select id from users where createdDate > (select max(createdDate)-interval 6 month from users))) order by total_spend desc
-
-
 •	Which brand has the most transactions among users who were created within the past 6 months?
+
 select brandCode, sum(finalPrice) as total_spend, count(distinct id) as total_transactions from receipt_item where id in (select id from receipts where userid in 
 (select id from users where createdDate > (select max(createdDate)-interval 6 month from users))) order by total_spend desc
-
