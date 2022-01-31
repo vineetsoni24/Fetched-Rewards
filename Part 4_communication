@@ -4,10 +4,12 @@ Thank you for providing with data. Based on premilimary analysis of the data, I 
 1. Non-atomic data: Several fields in the data are non-atomic i.e. multiple attributes in a single column which does not comply with the relational database
 structure and hence makes querying and analysing data highly challenging. For eg. List of items bought under a particular receipt number is present in a single 
 column which makes analyzing sales based on items very challenging.
-2. Missing Data: There are multiple occurrences of missing data in the table which results in ambiguity. 
-3. Data inconsistency: There are several occurences of data inconsistency, for eg. list of items under a certain receipt may have values for different attributes. 
+2. Missing Data: There are multiple occurrences of missing data in the table which results in ambiguity.
+3. Data redundancy: There is an issue of data redundancy, for eg. 'categoryCode' column does not store any additional information compared to 'category' column in
+the brands data. Infact, majority of the category codes are null (have no value).
+4. Data inconsistency: There are several occurences of data inconsistency, for eg. list of items under a certain receipt may have values for different attributes. 
 If there is a possibility of reducing the number of columns by making attributes consistent across items, it could help in gathering better insights from data.
-4. Duplicate values in IDs: There a several cases of duplicate values especially in the users dataset. Users data has information about 495 users but the ID column 
+5. Duplicate values in IDs: There a several cases of duplicate values especially in the users dataset. Users data has information about 495 users but the ID column 
 of users has only 212 unique values.
 
 In order to create a consistent and reliable database, the above concerns that have come up from a preliminary analysis will need to be taken care of. A set of data
