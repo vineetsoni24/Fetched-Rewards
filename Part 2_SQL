@@ -1,3 +1,4 @@
+MYSQL used for querying.
 •	What are the top 5 brands by receipts scanned for most recent month?
 
 select brandCode, count(distinct id) as total_receipts_scanned from receipt_item where id in 
