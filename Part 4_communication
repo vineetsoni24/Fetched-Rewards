@@ -9,7 +9,9 @@ column which makes analyzing sales based on items very challenging.
 the brands data. Infact, majority of the category codes are null (have no value).
 4. Data inconsistency: There are several occurences of data inconsistency, for eg. list of items under a certain receipt may have values for different attributes. 
 If there is a possibility of reducing the number of columns by making attributes consistent across items, it could help in gathering better insights from data.
-5. Duplicate values in IDs: There a several cases of duplicate values especially in the users dataset. Users data has information about 495 users but the ID column 
+5. Data ambiguity: There are cases where the data seems to be ambiguous, for eg. there are 569 distinct barcodes across all items sold under different receipts but
+only 16 of them overlap with the barcodes in brands data which has over 1160 distinct barcodes.
+6. Duplicate values in IDs: There a several cases of duplicate values especially in the users dataset. Users data has information about 495 users but the ID column 
 of users has only 212 unique values.
 
 In order to create a consistent and reliable database, the above concerns that have come up from a preliminary analysis will need to be taken care of. A set of data
