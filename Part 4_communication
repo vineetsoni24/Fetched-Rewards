@@ -14,7 +14,7 @@ only 16 of them overlap with the barcodes in brands data which has over 1160 dis
 6. Duplicate values in IDs: There a several cases of duplicate values especially in the users dataset. Users data has information about 495 users but the ID column 
 of users has only 212 unique values.
 
-In order to create a consistent and reliable database, the above concerns that have come up from a preliminary analysis will need to be taken care of. A set of data
+In order to create a consistent and reliable database, the above concerns that have come up from a preliminary analysis will need to be addressed. A set of data
 acquisition and storage guidelines can be put in place that will improve data management practices across the organization. To start off this process, a relational 
 database system can be implemented which would help in creating atomic data with consitency. As a first step, an ERD should be created which will essentially
 capture the overall architecture of the database that may ensure exhaustive and efficient data collection and storage with minimal redundancy. ERD can be worked out 
